@@ -3,45 +3,53 @@ function computerPlay() {
     let choices = ["rock", "scissors", "paper"]
     let thing = Math.floor(Math.random()*3)
     return choices [thing]
-}
-let computerScore = 0
+} // function randomly chooses rock paper or scissors
+
+
+let computerScore = 0 // initial scores
 let playerScore = 0
+const div = document.querySelector('div') // parent node for text elements
+const tie = document.createTextNode("It's a tie.") // text to run in case of a tie
+const paperLose = document.createTextNode("You lose. Paper beats rock.") // text to run if computer chooses paper (player lose)
+const paperWin = document.createTextNode("Yow win. Scissors beat paper.") // text to run if computer chooses paper (player win)
+const rockWin = document.createTextNode("You win! Paper beats rock!") //text to run if computer chooses rock (player win)
+const rockLose = document.createTextNode("You lose. ROck beats scissors") // first part is computer decision, second part is player outcome
+const scissorsLose = document.createTextNode("You lose. Scissors beats Paper")
+const scissorsWin = document.createTextNode("You win! Rock beats Scissors")
 function round(playerSelection, computerSelection) {
     computerSelection = computerPlay()
-    playerSelection = prompt("Pick rock, paper, or scissors.").toLowerCase()
     if (computerSelection == playerSelection){
-        console.log("It's a tie.")
-    } else if (computerSelection == "paper" && playerSelection == "rock") {
-        console.log("You lose. Paper beats rock") 
-        return computerScore +=1
+        div.appendChild(tie)
+    } else if (computerSelection == "paper" && playerSelection == 'rock') {
+        div.appendChild(paperLose) 
+        return computerScore += 1
     } else if (computerSelection == "paper" && playerSelection == "scissors") {
-        console.log("You win! Scissors beats rock!")
-        return playerScore +=1
+        div.appendChild(paperWin)
+        return playerScore += 1
     } else if (computerSelection == "rock" && playerSelection == "paper") {
-        console.log("You win! Paper beats rock!")
-        return playerScore +=1
+        div.appendChild(rockWin)
+        return playerScore += 1
     } else if (computerSelection == "rock" && playerSelection == "scissors") {
-        console.log("You lose. Rock beats scissors.")
+        div.appendChild(rockLose)
         return computerScore +=1
     } else if (computerSelection == "scissors" && playerSelection == "paper") {
-        console.log("You lose! Scissor beat paper.")
-        return computerScore +=1
-    } else {
-        console.log("You win! Rock beats scissors.")
-        return playerScore +=1
+        div.appendChild(scissorsLose)
+        return computerScore += 1
+    } else if (computerSelection == 'scissors' && playerSelection == 'rock') {
+        div.appendChild(scissorsWin)
+        return playerScore += 1
     }
  }
 
- function game() {
-    for (let i = 0; i < 5; i++) {
-        round()
-     }
-     if (playerScore == computerScore) {
-         console.log ("It's a tie game.")
-     } else if (playerScore < computerScore) {
-         console.log("You won!")
-     } else {
-         console.log("You lose.")
-     }
- }
- game()
+ const rock = document.querySelector('.rock')
+ rock.addEventListener('click', (e) => {
+     round('rock')
+ })
+ const paper = document.querySelector('.paper')
+ paper.addEventListener('click', (e) => {
+     round('paper')
+ })
+ const scissors = document.querySelector('.scissors')
+ scissors.addEventListener('click', (e) => {
+      round('scissors')
+ })
