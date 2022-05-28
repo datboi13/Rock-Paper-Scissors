@@ -74,12 +74,12 @@ function round(playerSelection, computerSelection) {
   }
   function gameOver() {
       if (computerScore==5) {
-        div.append("It's over. You lose.")
+        div.append("It's over. We're Doomed.")
         document.getElementById('rock').disabled = true
         document.getElementById('paper').disabled = true
         document.getElementById('scissors').disabled = true
       } else if (playerScore==5) {
-           div.append('You Win!')
+           div.append('You Won the Game! The Universe is saved!')
            document.getElementById('rock').disabled = true
            document.getElementById('paper').disabled = true
            document.getElementById('scissors').disabled = true
