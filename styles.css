@@ -76,3 +76,6 @@ img {
   width: 100%;
   justify-content: center;
 }
+#displaytext {
+  max-width: 800px;
+}
