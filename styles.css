@@ -1,5 +1,5 @@
 body {
- background-color: burlywood;
+ background-color: rgb(135, 199, 222);
 }
 button {
   background-color: #EA4C89;
@@ -28,10 +28,6 @@ button {
   touch-action: manipulation;
 }
 
-.button-1:hover,
-.button-1:focus {
-  background-color: #F082AC;
-}
 
 .buttons {
     display: flex;
@@ -39,8 +35,4 @@ button {
     margin-left: 400px;
     width: 600px;
     margin-top: 200px;
-}
-img {
-    width: 300px;
-    height: 200px;
 }

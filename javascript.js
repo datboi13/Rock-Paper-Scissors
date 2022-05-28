@@ -73,17 +73,17 @@ function round(playerSelection, computerSelection) {
     } // code from internet that 'toggles' the result text
   }
   function gameOver() {
-    if (computerScore == 5 && playerScore < 5) {
+      if (computerScore==5) {
         div.append("It's over. You lose.")
-        document.getElementsByClassName('rock').disabled = true
-        document.getElementsByClassName('paper').disabled = true
-        document.getElementsByClassName('scissors').disabled = true
-       } else if (playerScore == 5 && computerScore < 5) {
+        document.getElementById('rock').disabled = true
+        document.getElementById('paper').disabled = true
+        document.getElementById('scissors').disabled = true
+      } else if (playerScore==5) {
            div.append('You Win!')
-           document.getElementsByClassName('rock').disabled = true
-           document.getElementsByClassName('paper').disabled = true
-           document.getElementsByClassName('scissors').disabled = true
-       }
+           document.getElementById('rock').disabled = true
+           document.getElementById('paper').disabled = true
+           document.getElementById('scissors').disabled = true
+      }
 }
  const rock = document.querySelector('.rock')
  rock.addEventListener('click', (e) => {
