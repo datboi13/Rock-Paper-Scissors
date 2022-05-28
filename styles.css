@@ -1,6 +1,7 @@
 body {
  background-color: rgb(135, 199, 222);
 }
+
 button {
   background-color: #EA4C89;
   border-radius: 8px;
@@ -13,9 +14,10 @@ button {
   font-size: 14px;
   font-weight: 500;
   height: 40px;
+  width: 100px;
   line-height: 20px;
   list-style: none;
-  margin: 0;
+  margin-top: 30px;
   outline: none;
   padding: 10px 16px;
   position: relative;
@@ -33,6 +35,25 @@ button {
     display: flex;
     justify-content: space-between;
     margin-left: 400px;
-    width: 600px;
+    width: 800px;
     margin-top: 200px;
+}
+img {
+  width: 200px;
+  height: 200px;
+}
+.rocks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.papers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.scissorss {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
